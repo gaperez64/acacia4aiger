@@ -140,7 +140,7 @@ otfur(antichain *safety_game_PO, antichain *safety_game_PI, GNode* cfinfo, alpha
 		curlink = curlink->next;
 	}
 	g_list_free(trash);*/
-	g_hash_table_destroy(passed);
+	//g_hash_table_destroy(passed); // this one is not correct !
 	g_hash_table_foreach(depend, free_depend, NULL);
 	g_hash_table_destroy(depend);
 	g_hash_table_foreach(succ_to_visit, free_succ_to_visit, NULL);

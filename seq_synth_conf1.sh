@@ -10,15 +10,20 @@ BASE_FILE_NOEXT="${BASE_FILE%.*}"
 COMMAND="${DIR}binary/syfco -f acacia-specs -o ${TRANSLATED}${BASE_FILE}.ltl -pf ${TRANSLATED}${BASE_FILE}.part ${INPUT_FILE}"
 $COMMAND
 # we can now feed the files to acacia and determine if it is realizable or not
-COMMAND="python ${DIR}binary/acacia_plus.py --ltl ${TRANSLATED}${BASE_FILE}.ltl --part ${TRANSLATED}${BASE_FILE}.part --player 1 --check REAL --syn COMP --nbw COMP --v 0 --kbound 50 --kstep 3"
+COMMAND="python ${DIR}binary/acacia_plus.py --ltl ${TRANSLATED}${BASE_FILE}.ltl --part ${TRANSLATED}${BASE_FILE}.part --player 1 --check REAL --syn COMP --nbw COMP --v 0 --kbound 5000 --kstep 5"
 echo "executing: " ${COMMAND}
 $COMMAND
 res=$?
 if [[ $res == 10 ]]; then
     #echo "REALIZABLE"
     COMMAND="${DIR}binary/acacia2aig.native ${TRANSLATED}${BASE_FILE_NOEXT}.txt"
+    echo "executing: " ${COMMAND}
     $COMMAND
-else
+elif [[ $res == 20 ]]; then
     echo "UNREALIZABLE"
+elif [[ $res == 15 ]]; then
+    echo "Acacia does not know :("
+else
+    echo "Strange exit code ${res}"
 fi
 exit $res
