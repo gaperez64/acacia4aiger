@@ -1145,4 +1145,11 @@ def main(hardargs=None):
 
 
 if __name__ == "__main__":
-    main()
+    (solved, is_real) = main()
+    if (!solved):
+        return 15
+    if (is_real):
+        return 10
+    else:
+        return 20
+

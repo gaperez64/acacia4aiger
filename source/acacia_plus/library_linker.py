@@ -162,13 +162,12 @@ class TransitionSystem(Structure):
 
 
 #### FUNCTIONS LOADING ####
-current_path = os.path.dirname(os.path.realpath(__file__))
 if os.uname()[0] == "Darwin":
-    lib = cdll.LoadLibrary(current_path +
-            "/lib/acacia_plus.dylib")
+    lib = cdll.LoadLibrary(MAIN_DIR_PATH +
+            "lib/acacia_plus.dylib")
 elif os.uname()[0] == "Linux":
-    lib = cdll.LoadLibrary(current_path +
-            "/lib/acacia_plus.so")
+    lib = cdll.LoadLibrary(MAIN_DIR_PATH +
+            "lib/acacia_plus.so")
 else:
     print "OS not supported"
     exit(0)

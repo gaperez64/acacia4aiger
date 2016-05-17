@@ -15,6 +15,8 @@
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
+import os
+
 # C Booleans
 FALSE = 0
 TRUE = 1
@@ -61,7 +63,7 @@ UNREAL = "UNREAL"
 BOTH = "BOTH"
 
 # main dir 
-MAIN_DIR_PATH = "./"
+MAIN_DIR_PATH = os.path.dirname(os.path.realpath(__file__)) + "/" #= "./"
 
 # tmp directory for wring files path
 TMP_PATH = MAIN_DIR_PATH+"tmp/"

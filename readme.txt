@@ -1,5 +1,5 @@
 Acacia 4 Aiger - is a framework which prepares TLSF input for the 
-LTL synthesis tool Acacia++ and processes its output to, when possible,
+LTL synthesis tool Acacia+ and processes its output to, when possible,
 generate an AIGER circuit satisfying the TLSF specification.
 
 Authors = Romain Brenguier, Ocan Sankur, Guillermo A. Perez, Jean-Francois Raskin
@@ -12,7 +12,8 @@ organizing team (https://github.com/reactive-systems/syfco). More specifically,
 syfco has been modified to generate spec unit annotations in the LTL
 specification it generates from the original TLSF input. The latter greatly
 increases the capability of Acacia (and, internally, of ltl2ba) to deal with big
-specifications. Acacia++ is also included as part of the framework, together
-with its dependencies. Finally, in order to transform Acacia++ explicit Mealy
+specifications. Acacia+ is also included as part of the framework, together
+with its dependencies. Finally, in order to transform Acacia+ explicit Mealy
 machine output format into AIGER, an OCaml script using the Speculoos tools
-(https://github.com/romainbrenguier/Speculoos) is used.
+(https://github.com/romainbrenguier/Speculoos) is used. This last script depends
+on ocaml-cudd and ocaml-aiger.
