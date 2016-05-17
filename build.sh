@@ -18,13 +18,15 @@ cd ../..
 cp ${DIR}/source/acacia_plus/*.py ${DIR}/binary/
 cp ${DIR}/source/acacia_plus/lib/acacia_plus.so ${DIR}/binary/lib/acacia_plus.so
 cp ${DIR}/source/acacia_plus/tools/ltl2ba-1.1/ltl2ba ${DIR}/binary/tools/ltl2ba-1.1/ltl2ba
-#
-#cd ${DIR}/source
-#tar -zxvf cudd-2.5.1.tar.gz
-#cd cudd-2.5.1
-#make objlib
-#cd ..
-#make
-#cd ..
-#mkdir ${DIR}binary
-#cp ${DIR}source/abssynthe ${DIR}binary/abssynthe
+# Finally, we prepare the Speculoos lib and deps
+cd ${DIR}/source/ocaml-aiger 
+make
+cd ../..
+cd ${DIR}/source/ocaml-cudd
+/bin/bash install_cudd.sh
+make
+cd ../..
+cd ${DIR}/source/Speculoos
+make acacia2aig.native
+cd ../..
+cp ${DIR}/source/Speculoos/acacia2aig.native ${DIR}/binary/acacia2aig.native

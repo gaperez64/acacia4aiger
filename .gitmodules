@@ -1,3 +1,12 @@
 [submodule "source/syfco"]
 	path = source/syfco
 	url = https://github.com/gaperez64/syfco
+[submodule "source/Speculoos"]
+	path = source/Speculoos
+	url = https://github.com/romainbrenguier/Speculoos.git
+[submodule "source/ocaml-aiger"]
+	path = source/ocaml-aiger
+	url = https://github.com/romainbrenguier/ocaml-aiger.git
+[submodule "source/ocaml-cudd"]
+	path = source/ocaml-cudd
+	url = https://github.com/romainbrenguier/ocaml-cudd.git

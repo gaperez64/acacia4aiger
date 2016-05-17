@@ -1146,10 +1146,10 @@ def main(hardargs=None):
 
 if __name__ == "__main__":
     (solved, is_real) = main()
-    if (!solved):
-        return 15
+    if (not solved):
+        sys.exit(15)
     if (is_real):
-        return 10
+        sys.exit(10)
     else:
-        return 20
+        sys.exit(20)
 
