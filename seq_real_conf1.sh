@@ -15,10 +15,7 @@ echo "executing: " ${COMMAND}
 $COMMAND
 res=$?
 if [[ $res == 10 ]]; then
-    #echo "REALIZABLE"
-    COMMAND="${DIR}binary/acacia2aig.native ${TRANSLATED}${BASE_FILE_NOEXT}.txt"
-    echo "executing: " ${COMMAND}
-    $COMMAND
+    echo "REALIZABLE"
 elif [[ $res == 20 ]]; then
     echo "UNREALIZABLE"
 elif [[ $res == 15 ]]; then
