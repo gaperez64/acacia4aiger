@@ -129,10 +129,10 @@ otfur(antichain *safety_game_PO, antichain *safety_game_PI, GNode* cfinfo, alpha
 
 	// Free memory
 	GList *curlink = waiting;
-	while(curlink != NULL) {
-		free_safety_game_edge(curlink->data);
-		curlink = curlink->next;
-	}
+	//while(curlink != NULL) {
+	//	free_safety_game_edge(curlink->data);
+	//	curlink = curlink->next;
+	//}
 	g_list_free(waiting);
 	/*curlink = trash;
 	while(curlink != NULL) {

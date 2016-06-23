@@ -16,7 +16,7 @@
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 OS = $(shell uname)
-CC=gcc -g -O0
+CC=gcc#  -g -O0
 ifeq ($(OS), Darwin)
 	ARCHFLAG=
 	TARGET=acacia_plus.dylib
