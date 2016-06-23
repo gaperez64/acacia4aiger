@@ -39,7 +39,10 @@ initialize_transition_system(int nb_states_PI, int nb_states_PO) {
 ts_state*
 //new_ts_state(int nb_tr, char player) {
 new_ts_state(char player) {
-	ts_state *s = (ts_state*)malloc(sizeof(ts_state));
+    /* PREV_STRG_CODE:
+	 * ts_state *s = (ts_state*)malloc(sizeof(ts_state));
+     */
+    ts_state* s = malloc(sizeof(ts_state));
 	s->nb_tr = 0;
 	s->player = player;
 	s->transitions = NULL;

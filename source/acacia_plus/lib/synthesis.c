@@ -82,7 +82,10 @@ extract_strategies_from_safety_game(safety_game* sg, alphabet_info* alphabet, ch
 		tuple *p_0 = build_initial_tuple(cf_info, dimension, max_credit);
 
 		// Array of explored tuples (of the system) used by the optimization (goal: optimize the size of the strategy)
-		char *explored = (char*)malloc(sg_size*sizeof(char));
+		/* PREV_STRG_CODE:
+         * char *explored = (char*)malloc(sg_size * sizeof(char));
+         */
+        char explored[sg_size];// = malloc(sg_size * sizeof(char));
 		int i;
 		for(i=0; i<sg_size; i++) {
 			explored[i] = FALSE;
@@ -98,7 +101,10 @@ extract_strategies_from_safety_game(safety_game* sg, alphabet_info* alphabet, ch
 				strategy->states[strategy->size_states_PO] = new_ts_state(P_I);
 				strategy->nb_states_PI++;
 				strategy->nb_initial_states = 1;
-				strategy->initial_states = (int*)malloc(sizeof(int));
+                /* PREV_STRG_CODE:
+				* strategy->initial_states = (int*)malloc(sizeof(int));
+                */
+                strategy->initial_states = malloc(sizeof(int));
 				strategy->initial_states[0] = sg_size; // First state of P_I
 
 				// Deal it (explore its successors)
