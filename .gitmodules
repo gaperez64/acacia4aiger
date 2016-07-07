@@ -1,6 +1,6 @@
 [submodule "source/syfco"]
 	path = source/syfco
-	url = https://github.com/gaperez64/syfco
+	url = https://github.com/reactive-systems/syfco.git
 [submodule "source/Speculoos"]
 	path = source/Speculoos
 	url = https://github.com/romainbrenguier/Speculoos.git
