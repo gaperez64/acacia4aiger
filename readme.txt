@@ -44,3 +44,9 @@ instance, run the following in ubuntu or debian
 
 apt-get install ocaml
 apt-get install ocamlbuild
+
+GIT-related note:
+If you cloned the source from github, be advised that you should update
+the submodules as well. It would be good to execute
+
+git pull && git submodule init && git submodule update
