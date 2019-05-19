@@ -16,7 +16,7 @@
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 from pygraph.classes.digraph import *
-from pygraphviz import *
+# from pygraphviz import *
 from math import *
 import os
 
@@ -263,33 +263,33 @@ def print_solution(g, inputs, outputs, player, filename, path, verbosity):
             
 
 # Converts the digraph (pygraph) into a AGraph (pygraphviz) to visualize the solution
-def display_solution(g, inputs, outputs, player, filename, path):
-    viz_g = AGraph(name="G", directed=True, strict=False)
-    for node in g.nodes():
-        node_attributes = dict(g.node_attributes(node))
-        lab = ""
-        try:
-            lab = node_attributes['label']
-        except KeyError:
-            pass
-        try:
-            node_attributes['initial']
-            initial = True
-        except KeyError:
-            initial = False
-        
-        if initial:
-            viz_g.add_node(node, label=lab, color='red', shape="ellipse")
-        else:
-            viz_g.add_node(node, label=lab, shape="ellipse")
-        
-    for (a, b) in g.edges():
-        viz_g.add_edge(a, b, label=g.edge_label((a, b)).replace("&&", "&") + "  ")
-            
-    try:
-        # Write in .png
-        viz_g.draw(path+filename+".png", "png", prog="dot")
-        # Write in .dot
-        viz_g.draw(path+filename+".dot", "dot", prog="dot")
-    except IOError:
-        pass
+#def display_solution(g, inputs, outputs, player, filename, path):
+#    viz_g = AGraph(name="G", directed=True, strict=False)
+#    for node in g.nodes():
+#        node_attributes = dict(g.node_attributes(node))
+#        lab = ""
+#        try:
+#            lab = node_attributes['label']
+#        except KeyError:
+#            pass
+#        try:
+#            node_attributes['initial']
+#            initial = True
+#        except KeyError:
+#            initial = False
+#        
+#        if initial:
+#            viz_g.add_node(node, label=lab, color='red', shape="ellipse")
+#        else:
+#            viz_g.add_node(node, label=lab, shape="ellipse")
+#        
+#    for (a, b) in g.edges():
+#        viz_g.add_edge(a, b, label=g.edge_label((a, b)).replace("&&", "&") + "  ")
+#            
+#    try:
+#        # Write in .png
+#        viz_g.draw(path+filename+".png", "png", prog="dot")
+#        # Write in .dot
+#        viz_g.draw(path+filename+".dot", "dot", prog="dot")
+#    except IOError:
+#        pass
